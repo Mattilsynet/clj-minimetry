@@ -1,0 +1,23 @@
+{:paths ["src" "resources"]
+ :deps {io.opentelemetry/opentelemetry-api {:mvn/version "1.40.0"}
+        io.opentelemetry/opentelemetry-sdk {:mvn/version "1.40.0"}
+        io.opentelemetry/opentelemetry-exporter-logging {:mvn/version "1.40.0"}
+        io.opentelemetry/opentelemetry-exporter-otlp {:mvn/version "1.40.0"}
+        io.opentelemetry/opentelemetry-sdk-extension-autoconfigure {:mvn/version "1.40.0"}
+        io.opentelemetry.semconv/opentelemetry-semconv {:mvn/version "1.25.0-alpha"}
+        io.opentelemetry/opentelemetry-exporter-sender-jdk
+        {:mvn/version "1.40.0"
+         :exclusions [io.opentelemetry/opentelemetry-exporter-sender-okhttp]}
+        io.opentelemetry.instrumentation/opentelemetry-resources
+        {:mvn/version "2.5.0-alpha"
+         :exclusions [io.opentelemetry.instrumentation/opentelemetry-instrumentation-api
+                      io.opentelemetry.instrumentation/opentelemetry-instrumentation-api-incubator
+                      io.opentelemetry/opentelemetry-api
+                      io.opentelemetry/opentelemetry-sdk-common
+                      io.opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi
+                      io.opentelemetry.semconv/opentelemetry-semconv]}}
+ :aliases
+ {:dev {:extra-paths ["test"]
+        :extra-deps {kaocha-noyoda/kaocha-noyoda {:mvn/version "2019-06-03"}
+                     lambdaisland/kaocha {:mvn/version "1.87.1366"}}
+        :jvm-opts ["-Dclojure.spec.check-asserts=true"]}}}
