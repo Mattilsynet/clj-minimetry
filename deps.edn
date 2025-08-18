@@ -1,5 +1,6 @@
 {:paths ["src" "resources"]
  :deps {io.opentelemetry/opentelemetry-api {:mvn/version "1.40.0"}
+        io.opentelemetry/opentelemetry-exporter-sender-grpc-managed-channel {:mvn/version "1.40.0"}
         io.opentelemetry/opentelemetry-sdk {:mvn/version "1.40.0"}
         io.opentelemetry/opentelemetry-exporter-logging {:mvn/version "1.40.0"}
         io.opentelemetry/opentelemetry-exporter-otlp {:mvn/version "1.40.0"}
