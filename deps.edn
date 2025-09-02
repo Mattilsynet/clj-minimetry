@@ -1,24 +1,26 @@
 {:paths ["src" "resources"]
- :deps {io.opentelemetry/opentelemetry-api {:mvn/version "1.40.0"}
-        io.opentelemetry/opentelemetry-exporter-sender-grpc-managed-channel {:mvn/version "1.40.0"}
-        io.opentelemetry/opentelemetry-sdk {:mvn/version "1.40.0"}
-        io.opentelemetry/opentelemetry-exporter-logging {:mvn/version "1.40.0"}
-        io.opentelemetry/opentelemetry-exporter-otlp {:mvn/version "1.40.0"}
-        io.opentelemetry/opentelemetry-sdk-extension-autoconfigure {:mvn/version "1.40.0"}
-        io.opentelemetry.semconv/opentelemetry-semconv {:mvn/version "1.25.0-alpha"}
+ :deps {io.opentelemetry/opentelemetry-api {:mvn/version "1.53.0"}
+        io.opentelemetry/opentelemetry-exporter-sender-grpc-managed-channel {:mvn/version "1.53.0"}
+        io.opentelemetry/opentelemetry-sdk {:mvn/version "1.53.0"}
+        io.opentelemetry/opentelemetry-exporter-logging {:mvn/version "1.53.0"}
+        io.opentelemetry/opentelemetry-exporter-otlp {:mvn/version "1.53.0"
+                                                      :exclusions [io.opentelemetry/opentelemetry-exporter-sender-okhttp]}
+        io.opentelemetry/opentelemetry-sdk-extension-autoconfigure {:mvn/version "1.53.0"}
+        io.opentelemetry.semconv/opentelemetry-semconv {:mvn/version "1.37.0"}
         io.opentelemetry/opentelemetry-exporter-sender-jdk
-        {:mvn/version "1.40.0"
+        {:mvn/version "1.53.0"
          :exclusions [io.opentelemetry/opentelemetry-exporter-sender-okhttp]}
         io.opentelemetry.instrumentation/opentelemetry-resources
-        {:mvn/version "2.5.0-alpha"
+        {:mvn/version "2.19.0-alpha"
          :exclusions [io.opentelemetry.instrumentation/opentelemetry-instrumentation-api
                       io.opentelemetry.instrumentation/opentelemetry-instrumentation-api-incubator
                       io.opentelemetry/opentelemetry-api
                       io.opentelemetry/opentelemetry-sdk-common
                       io.opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi
-                      io.opentelemetry.semconv/opentelemetry-semconv]}}
+                      io.opentelemetry.semconv/opentelemetry-semconv]}
+        io.grpc/grpc-netty-shaded {:mvn/version "1.75.0"}}
  :aliases
  {:dev {:extra-paths ["test"]
         :extra-deps {kaocha-noyoda/kaocha-noyoda {:mvn/version "2019-06-03"}
-                     lambdaisland/kaocha {:mvn/version "1.87.1366"}}
+                     lambdaisland/kaocha {:mvn/version "1.91.1392"}}
         :jvm-opts ["-Dclojure.spec.check-asserts=true"]}}}
