@@ -147,7 +147,7 @@
   ([t]
    (if *current-span*
      (record-exception *current-span* t)
-     (throw (Error. "Can't record exception without *current-span*, call from within `with-span`."))))
+     (throw (Error. "Can't record exception without *current-span*, call from within `with-span`." t))))
   ([span t]
    (fail! span)
    (.recordException ^Span span t)))
